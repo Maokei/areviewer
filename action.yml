@@ -1,0 +1,30 @@
+name: 'Secure AI PR Reviewer'
+description: 'Secures and reviews Pull Request code changes using Gemini'
+author: 'maokei'
+inputs:
+  gemini_api_key:
+    description: 'Gemini API Key'
+    required: true
+  gemini_model:
+    description: 'Gemini Model to use'
+    required: false
+    default: 'gemini-3-flash-preview'
+  output_language:
+    description: 'Language for the review output'
+    required: false
+    default: 'english'
+  github_token:
+    description: 'GitHub token for PR commenting'
+    required: false
+    default: ${{ github.token }}
+  repo:
+    description: 'Repository name in format owner/repo'
+    required: false
+    default: ${{ github.repository }}
+  pr_number:
+    description: 'Pull Request number'
+    required: false
+    default: ${{ github.event.pull_request.number }}
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
