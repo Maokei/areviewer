@@ -33,8 +33,7 @@ Output language should be ${language}.
 if (!apiKey) {
   throw new Error("No API key set");
 }
-
-const ai = new GoogleGenAI({});
+const ai = new GoogleGenAI({ apiKey });
 
 export async function reviewCode(diffText: string, reviewJsonSchema: object) {
   const response = await ai.models.generateContent({
