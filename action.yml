@@ -2,10 +2,10 @@ name: 'Secure AI PR Reviewer'
 description: 'Secures and reviews Pull Request code changes using Gemini'
 author: 'maokei'
 inputs:
-  gemini_api_key:
+  GEMINI_API_KEY:
     description: 'Gemini API Key'
     required: true
-  gemini_model:
+  GEMINI_MODEL:
     description: 'Gemini Model to use'
     required: false
     default: 'gemini-3-flash-preview'
